@@ -54,7 +54,7 @@ def plot_decision_bounds(model, x_data, labels):
     x2_min = np.min(bidim_data_df["y"])
     x2_max = np.max(bidim_data_df["y"])
 
-    g = np.meshgrid(np.arange(x1_min,x1_max, 1), np.arange(x2_min,x2_max, 1))
+    g = np.meshgrid(np.arange(x1_min,x1_max, 3), np.arange(x2_min,x2_max, 3))
     positions = np.append(g[0].reshape(-1,1),g[1].reshape(-1,1),axis=1)
 
     grid_values = np.argmax(extractor_softmax.predict(positions), (1))
